@@ -1,0 +1,17 @@
+site_name: Chat.cz - nápověda
+site_url: https://help.chat.cz
+
+repo_url: https://github.com/chat-cz/help
+
+nav:
+  - Úvod: index.md
+  - Chat: 
+    - Homepage: chat/index.md
+    - Místnost: chat/mistnost/index.md
+
+theme:
+  name: mkdocs
+  locale: cs
+
+markdown_extensions:
+  - markdown.extensions.attr_list
