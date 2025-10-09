@@ -7,7 +7,7 @@ Místnost je klasicky rozdělena na tři části. Hlavní plocha s texty, dole j
 Největší část obrazovky. Zobrazují se buď systémové hlašení (malé šedé písmo – např. o vstupu do místnosti, reakce na lomítkové příkazy apod.) nebo texty od uživatelů. Na začátku řádku je nick autora. Pokud se jedná o šeptání, je označeno šipkou (od koho⇛komu).
 
 Po najetí kurzorem na text se zobrazí menu s časem zprávy a několika ikonami:
-otevřít nové okno s šeptáním, ignorace, smazat ten konkrétní řádek
+<i class="fa fa-share"></i> otevřít nové okno s šeptáním, <i class="fa fa-ban"></i> ignorace, <i class="fa fa-trash"></i> smazat ten konkrétní řádek
 
 ## Seznam uživatelů
 
@@ -30,18 +30,21 @@ Pokud se příkaz použije na nick s mezerou, je potřeba jej napsat do uvozovek
 
 Příkazy jsou:
 
-    **/whisper**, /m, /w – šeptání. Např.: /whisper franci ahoj
-    **/ignore**, /i – ignorovat. Např.: /i „otravný nick“
+* **/whisper**, /m, /w – šeptání. Např.: /whisper franci ahoj
+* **/ignore**, /i – ignorovat. Např.: /i „otravný nick“
 
 ## Možnosti admina
+
+![Nastavení místnost](img/room_settings.png)
+{: .text-center}
 
 ### Zamykání
 
 Přístup do místnosti lze omezit pro tři kategorie:
 
-    **anonymy** [/noanon, /na]
-    **mladší 18 let** [/lock18, /l18] – platí i pro anonymy a ty, kdo nemají v profilu vyplněný věk
-    **všechny** [/lock, /l]
+* **anonymy** [/noanon, /na]
+* **mladší 18 let** [/lock18, /l18] – platí i pro anonymy a ty, kdo nemají v profilu vyplněný věk
+* **všechny** [/lock, /l]
 
 ### Heslo
 Správce může při zamknutí nastavit heslo, pomocí kterého lze vstoupit i do zamknuté místnosti. Funguje to tak, že místnost zamkne a **zároveň** nastaví i heslo (viz. obrázek). Při pokusu o vstup se uživateli zobrazí dotaz na heslo a pokud ho zadá správně, tak může vstoupit. Pokud už v místnosti byl, tak heslo znovu zadávat nemusí.
