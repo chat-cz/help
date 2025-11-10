@@ -13,10 +13,10 @@ Po najetí kurzorem na text se zobrazí menu s časem zprávy a několika ikonam
 
 V pravém sloupci je seznam uživatelů v místnosti. Každý řádek začíná nickem a následuje několik ikonek:
 
-– nastavení ignorace (ignorovaný nick je přeškrtnutý)
-, , ,  – ikona admina
-, ,  – ikona karmy
-– anonym
+<i class="fa fa-ban"></i> – nastavení ignorace (ignorovaný nick je přeškrtnutý)<br>
+<i class="fa fa-star text-yellow"></i>, <i class="fa fa-star text-warning"></i>, <i class="fa fa-star text-success"></i>, <i class="fa fa-star text-info"></i> – ikona admina<br>
+<i class="fa fa-sun text-yellow"></i>, <i class="fa fa-sun text-warning"></i>, <i class="fa fa-sun text-danger"></i> – ikona karmy<br>
+<i class="fa fa-user-secret"></i> – anonym<br>
 
 Po najetí na nick se zobrazí bublina s odkazem na profil. Zároveň je v ní pole na vaši soukromou poznámku. Ke každému nicku si můžete připojit vlastní poznámku, kterou vidíte jen vy.
 
@@ -54,7 +54,7 @@ Místnost lze odemknout pomocí příkazu **/unlock** (/u).
 
 ### Smazání textu
 
-Správce může smazat konkrétní řádek v chatu (pomocí ikony ) nebo všechny texty nějakého uživatele (pomocí ikony nebo příkazem **/smaz**). V druhém případě pak nemůže uživatel 1 minutu psát nové texty do místnosti.
+Správce může smazat konkrétní řádek v chatu (pomocí ikony <i class="fa fa-trash text-warning"></i>) nebo všechny texty nějakého uživatele (pomocí ikony <i class="fa fa-trash text-danger"></i> nebo příkazem **/smaz**). V druhém případě pak nemůže uživatel 1 minutu psát nové texty do místnosti.
 
 ### Posílání odkazů
 
@@ -62,7 +62,7 @@ Správce může nastavit, zda lze posílat odkazy do místnosti. Základní nast
 
 ### Vykopnutí
 
-Správce může i vykopnout z místnosti pomocí příkazu **/kick**. U každého vykopnutí se musí uvést důvod. Zároveň jsou uložené všechny zprávy, které si správce a vykopnutý psali (i vzájemné šeptání). Room admini (, ) to mohou, v případě sporu, dohledat v administraci.
+Správce může i vykopnout z místnosti pomocí příkazu **/kick**. U každého vykopnutí se musí uvést důvod. Zároveň jsou uložené všechny zprávy, které si správce a vykopnutý psali (i vzájemné šeptání). Room admini (<i class="fa fa-star text-success"></i>, <i class="fa fa-star text-info"></i>) to mohou, v případě sporu, dohledat v administraci.
 První vykopnutí je na 15 minut. Pokud byl člověk v posledních 24 hodinách vykopnutý z jakékoliv místnosti, je platnost prodloužena na 5 hodin.
 
 ### Změna admina

@@ -1,0 +1,27 @@
+image: python:3.12
+
+stages:
+  - build
+
+cache:
+  paths:
+    - .venv/
+    - .cache/pip/
+
+before_script:
+  - python -m venv .venv
+  - . .venv/bin/activate
+  - python -m pip install --upgrade pip
+  - pip install -r requirements.txt
+
+build_site:
+  stage: build
+  script:
+    - . .venv/bin/activate
+    - python -m mkdocs build
+  artifacts:
+    paths:
+      - site/
+    expire_in: 1 week
+  only:
+    - main

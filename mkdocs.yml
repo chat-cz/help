@@ -8,8 +8,16 @@ edit_uri: edit/main/docs
 nav:
   - Úvod: index.md
   - Chat: 
-    - Homepage: chat/index.md
+    - Úvod: chat/index.md
     - Místnost: chat/mistnost/index.md
+    - Rezervovaná místnost: chat/rezervovana-mistnost.md
+  - Diskuze: diskuze/index.md
+  - Fotogalerie:
+    - Úvod: fotogalerie/index.md
+    - Fotka: fotogalerie/fotka.md
+  - Obecné: 
+    - Úvod: obecne/index.md
+    - Admini: obecne/admini.md
 
 theme:
   name: mkdocs
@@ -17,5 +25,11 @@ theme:
   user_color_mode_toggle: auto
   custom_dir: custom_theme/
 
+extra_css:
+  - stylesheets/extra.css
+
 markdown_extensions:
   - markdown.extensions.attr_list
+
+hooks:
+  - hooks/copyright.py

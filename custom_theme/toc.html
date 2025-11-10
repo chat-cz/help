@@ -5,21 +5,30 @@
         </button>
     </div>
 
-    {% macro toc_item(item) %}
-        {%- if item.level <= config.theme.navigation_depth %}
-            <li class="nav-item" data-bs-level="{{ item.level }}"><a href="{{ item.url }}" class="nav-link">{{ item.title }}</a>
-              <ul class="nav flex-column">
-                {%- for child in item.children %}
-                    {{- toc_item(child) }}
-                {%- endfor %}
-              </ul>
+    {% macro nav_item(item, level=1) %}
+        {%- if level <= config.theme.navigation_depth %}
+            {% set pad = ((level - 1) * 1.25) | round(2) %}
+            <li class="nav-item" data-bs-level="{{ level }}" style="padding-left: {{ pad }}rem;">
+                {%- if item.children %}
+                    <span class="nav-parent">{{ item.title }}</span>
+                {%- else %}
+                    <a href="/{{ item.url }}" class="nav-link">{{ item.title }}</a>
+                {%- endif %}
+                {%- if item.children %}
+                <ul class="nav flex-column">
+                    {%- for child in item.children %}
+                        {{- nav_item(child, level + 1) }}
+                    {%- endfor %}
+                </ul>
+                {%- endif %}
             </li>
         {%- endif %}
     {%- endmacro %}
+
     <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
         <ul class="nav flex-column">
-        {%- for item in page.toc %}
-            {{ toc_item(item) }}
+        {%- for item in nav %}
+            {{ nav_item(item, 1) }}
         {%- endfor %}
         </ul>
     </div>

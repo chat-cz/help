@@ -14,16 +14,14 @@ Stačí vyplnit **název** a zmáčnout tlačítko **založit**. Místnost má j
 ![Seznam místností](img/room_list.png)
 {: .text-center}
 
-[Místnosti](mistnost/index.md) jsou řazeny: nejprve vaše  oblíbené, s lidmi a nakonec prázdné stálé.
+[Místnosti](mistnost/index.md) jsou řazeny: nejprve vaše <i class="fa fa-heart text-danger"></i> oblíbené, s lidmi a nakonec prázdné stálé.
 V levém sloupci je název a popisek místnosti. Vedle názvu se může objevit několik ikon:
 
-ref ewifonw <i class="fa fa-smile text-danger"></i> df erwpfkewfew0 fef0new
-
-<span style="color: #ff9900;"><i class="fa fa-star"></i></span>&nbsp;– stálá místnost<span style="color: #000000;"><br>
-<span style="color: #3366ff;"><i class="fa fa-lock"></i></span></span> – místnost je uzamčená<span style="color: #ff9900;"><span style="color: #000000;"><span style="color: #3366ff;"><br>
-<i class="fa fa-people-group"></i></span></span></span> – pouze pro přihlášené uživatele<span style="color: #ff9900;"><span style="color: #000000;"><span style="color: #3366ff;"><br>
-<i class="fa fa-car "></i></span></span></span> – jen pro starší 18ti let<span style="color: #ff9900;"><span style="color: #000000;"><span style="color: #3366ff;"><br>
-</span></span></span><span style="color: #ff9900;"><span style="color: #000000;"><span style="color: #3366ff;"><i class="fa fa-external-link fa- "></i></span></span></span> – odkaz na webovku místnosti<span style="color: #000000;"><br>
-<span style="color: #ff0000;"><i class="fa fa-heart"></i></span></span> – místnost je má oblíbená
+<i class="fa fa-star text-warning"></i>&nbsp;– stálá místnost<br>
+<i class="fa fa-lock text-primary"></i> – místnost je uzamčená<br>
+<i class="fa fa-people-group text-primary"></i> – pouze pro přihlášené uživatele<br>
+<i class="fa fa-car text-primary"></i> – jen pro starší 18ti let<br>
+<i class="fa fa-external-link text-primary "></i> – odkaz na webovku místnosti<br>
+<i class="fa fa-heart text-danger"></i> – místnost je má oblíbená
 
 Vpravo je seznam uživatelů v místnosti. Modře jsou napsáni muži, červeně ženy.
