@@ -4,7 +4,6 @@
             <span class="fa fa-angle-down"></span>
         </button>
     </div>
-
     {% macro nav_item(item, level=1) %}
         {%- if level <= config.theme.navigation_depth %}
             {% set pad = ((level - 1) * 1.25) | round(2) %}
@@ -33,12 +32,7 @@
         </ul>
     </div>
     <div class="navbar-collapse collapse card bg-body-tertiary p-3 mt-2">
-        <a href="https://www.toplist.cz" id="toplistcz111111" title="TOPlist"><noscript><img src="https://toplist.cz/count.asp?id=111111&logo=mc&njs=1"
-        alt="TOPlist" width="88" height="60"/></noscript><script language="JavaScript">
-        (function(d,e,s) {d.getElementById('toplistcz111111').innerHTML='<img src="https://toplist.cz/count.asp?id=111111&logo=mc&http='+
-        e(d.referrer)+'&t='+e(d.title)+'&l='+e(d.URL)+'&wi='+e(s.width)+'&he='+e(s.height)+'&cd='+
-        e(s.colorDepth)+'" width="88" height="60" border="0" alt="TOPlist" />';
-        }(document,encodeURIComponent,window.screen))
-        </script></a>
+        <a href="https://www.toplist.cz" title="TOPlist"><img src="https://toplist.cz/images/counter.asp?a=mc&id=111111"
+        alt="TOPlist" width="88" height="60"/></a>
     </div>
 </div>

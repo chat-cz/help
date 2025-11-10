@@ -1,4 +1,5 @@
 site_name: Chat.cz - nápověda
+site_description: Nápověda pro chatovací server Chat.cz
 site_url: https://help.chat.cz
 
 repo_name: GitHub
@@ -18,6 +19,8 @@ nav:
   - Obecné: 
     - Úvod: obecne/index.md
     - Admini: obecne/admini.md
+    - Ignorování: obecne/ignorovani.md
+    - Karma: obecne/karma.md
 
 theme:
   name: mkdocs
