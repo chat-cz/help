@@ -11,7 +11,7 @@
                 {%- if item.children %}
                     <span class="nav-parent">{{ item.title }}</span>
                 {%- else %}
-                    <a href="./{{ '../'*(level+1) }}{{ item.url }}" class="nav-link">{{ item.title }}</a>
+                    <a href="{{ config.site_url }}{{ item.url }}" class="nav-link">{{ item.title }}</a>
                 {%- endif %}
                 {%- if item.children %}
                 <ul class="nav flex-column">
