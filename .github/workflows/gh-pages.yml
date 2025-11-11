@@ -30,6 +30,15 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
+      - name: Set site_url for GitHub Pages
+        run: |
+          # derive owner and repo from the workflow context and replace site_url
+          owner="${{ github.repository_owner }}"
+          repo="${{ github.event.repository.name }}"
+          pages_url="https://${owner}.github.io/${repo}/"
+          echo "Setting site_url to ${pages_url} in mkdocs.yml"
+          sed -i "s|^site_url: .*|site_url: ${pages_url}|" mkdocs.yml
+
       - name: Build MkDocs site
         run: |
           . .venv/bin/activate
