@@ -1,0 +1,54 @@
+name: Build and deploy MkDocs to GitHub Pages
+
+on:
+  push:
+    branches: [ main ]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: |
+          python -m venv .venv
+          . .venv/bin/activate
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Build MkDocs site
+        run: |
+          . .venv/bin/activate
+          python -m mkdocs build
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./site
+          publish_branch: gh-pages
+
+  # Optionally: ensure pages are deployed
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Enable GitHub Pages
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const owner = context.repo.owner
+            const repo = context.repo.repo
+            await github.rest.repos.enablePagesSite({ owner, repo, source: { branch: 'gh-pages', path: '/' } })
