@@ -47,10 +47,15 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
-      - name: Enable GitHub Pages
+      - name: Enable GitHub Pages (via REST API)
         uses: actions/github-script@v6
         with:
           script: |
             const owner = context.repo.owner
             const repo = context.repo.repo
-            await github.rest.repos.enablePagesSite({ owner, repo, source: { branch: 'gh-pages', path: '/' } })
+            // Use the generic request API to create/enable the Pages site
+            await github.request('POST /repos/{owner}/{repo}/pages', {
+              owner,
+              repo,
+              source: { branch: 'gh-pages', path: '/' }
+            })
