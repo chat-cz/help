@@ -21,6 +21,8 @@ nav:
     - Admini: obecne/admini.md
     - Ignorování: obecne/ignorovani.md
     - Karma: obecne/karma.md
+    - Pravidla: obecne/pravidla.md
+    - Výhody přihlášených: obecne/vyhody-prihlasenych.md
 
 theme:
   name: mkdocs
@@ -36,3 +38,7 @@ markdown_extensions:
 
 hooks:
   - hooks/copyright.py
+
+plugins:
+  - search
+
