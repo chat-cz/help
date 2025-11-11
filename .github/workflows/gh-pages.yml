@@ -41,21 +41,3 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./site
           publish_branch: gh-pages
-
-  # Optionally: ensure pages are deployed
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Enable GitHub Pages (via REST API)
-        uses: actions/github-script@v6
-        with:
-          script: |
-            const owner = context.repo.owner
-            const repo = context.repo.repo
-            // Use the generic request API to create/enable the Pages site
-            await github.request('POST /repos/{owner}/{repo}/pages', {
-              owner,
-              repo,
-              source: { branch: 'gh-pages', path: '/' }
-            })
