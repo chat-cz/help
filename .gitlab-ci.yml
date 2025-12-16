@@ -2,6 +2,7 @@ image: python:3.12
 
 stages:
   - build
+  - deploy
 
 cache:
   paths:
@@ -27,6 +28,7 @@ build_site:
     - main
 
 deploy:
+  stage: deploy
   script:
     - echo "Deploying to $STATIC_DEPLOY_URL"
     - rsync -rav --delete-after ./site/ $STATIC_DEPLOY_URL
