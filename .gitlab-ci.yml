@@ -25,3 +25,13 @@ build_site:
     expire_in: 1 week
   only:
     - main
+
+deploy:
+  script:
+    - echo "Deploying to $STATIC_DEPLOY_URL"
+    - rsync -rav --delete-after ./site/ $STATIC_DEPLOY_URL
+  artifacts:
+    paths:
+      - site/
+  rules:
+    - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH
