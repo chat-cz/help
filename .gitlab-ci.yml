@@ -29,6 +29,9 @@ build_site:
 
 deploy:
   stage: deploy
+  image: alpine:latest
+  before_script:
+    - apk add --no-cache rsync
   script:
     - echo "Deploying to $STATIC_DEPLOY_URL"
     - rsync -rav --delete-after ./site/ $STATIC_DEPLOY_URL
